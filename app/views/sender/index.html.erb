@@ -1,0 +1,81 @@
+
+
+
+<div class="text-center">
+  <p>
+  <p>説明</p>
+  その回の指定した日数までのデータを出力します<br>
+  存在しない日数を含めると出力されないので注意してください<br>
+  日数にもよりますが一回当たり大体１時間くらいかかります
+  </p>
+  <div>
+    <div class="mb-3">
+      <a href="https://drive.google.com/drive/folders/1jtFyhZuFJ0wMl4US4819Mfvndl_3PCes?usp=sharing">ファイルの出力先</a>
+    </div>
+    <form action="/generate" method="POST">
+        
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <div class="mb-3">
+          <label class="form-label">年</label>
+          <input type="text" name="year" class="form-control-sm"/><br>
+        </div>
+        <div class="mb-3">
+
+          <label class="form-label">競馬場</label>
+          <select name="field" class="form-select-sm">
+          
+          <option value="札幌">札幌</option>
+          <option value="函館">函館</option>
+          <option value="福島">福島</option>
+          <option value="新潟">新潟</option>
+          <option value="東京">東京</option>
+          <option value="中山">中山</option>
+          <option value="中京">中京</option>
+          <option value="京都">京都</option>
+          <option value="阪神">阪神</option>
+          <option value="小倉">小倉</option>
+
+          </select><br>
+          </div>
+        </div>
+        <div class="mb-3">
+
+          <label class="form-label">回数</label>
+          <select name="time" class="form-select-sm">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          </select><br>
+        </div>
+        <div class="mb-3">
+        <label class="form-label">日にち</label>
+          <select name="day" class="form-selct-sm">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          </select>
+        </div>
+        <input type="submit" value="単勝の表を生成" formaction="/generate_t" formmethod="POST"/>
+        <input type="submit" value="三連単の表を生成" formaction="/generate_s" formmethod="POST"/>
+        <input type="submit" value="両方生成" formaction="/generate" formmethod="POST">
+    </form>
+  </div>
+</div>
